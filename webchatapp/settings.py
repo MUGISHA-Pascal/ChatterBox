@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chat',
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +52,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'webchatapp.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -67,8 +68,11 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'webchatapp.wsgi.application'
 
+
+ASGI_APPLICATION = 'webchatapp.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
