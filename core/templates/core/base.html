@@ -1,12 +1,30 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ChatterBox</title>
-</head>
-<body>
-     Chatter
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>{% block title %}{% endblock %}ChatterBox</title>
+  </head>
+  <body class="bg-gray-900 text-xs text-white">
+    <nav class="flex flex-row justify-between h-14 bg-gray-700 items-center">
+      <a href="/" class="font-bold text-2xl">ChatterBox</a>
+      <div class="flex flex-row space-x-4 p-4 items-center">
+        <a href="/login/">login</a>
+        <a href="/signup/" class="bg-gray-900 p-2 rounded-xl hover:opacity-70"
+          >signup</a
+        >
+      </div>
+    </nav>
+    <section class="flex items-center justify-center">
+      <h2 class="font-bold text-3xl mt-20">Welcome to ChatterBox</h2>
+      {% block content%} {%endblock%}
+    </section>
+  </body>
 </html>
