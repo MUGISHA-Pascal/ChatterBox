@@ -1,41 +1,51 @@
 {% extends "core/base.html" %} {% block content %}
-<form method="post" action="." class="bg-gray-700 rounded-xl p-4 text-xs flex flex-col mt-16 items-center space-y-2">
+<form
+  method="post"
+  action="."
+  class="bg-gray-700 rounded-xl p-4 text-xs flex flex-col mt-16 items-center space-y-2"
+>
   {% csrf_token %}
   <h2 class="text-xl font-bold pb-10">Sign up</h2>
   <div>
-  <label for="username" >Username : </label>
-  <input
-    type="text"
-    name="username"
-    id="username"
-    placeholder="enter the username"
-    class="bg-gray-700 border-2 border-white-100 rounded-xl text-xs h-8 pl-2 pr-2 w-48 focus:outline-none ml-6"
-  />
+    <label for="username">Username : </label>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder="enter the username"
+      class="bg-gray-700 border-2 border-white-100 rounded-xl text-xs h-8 pl-2 pr-2 w-48 focus:outline-none ml-6"
+    />
   </div>
   <br />
   <div>
-  <label for="password1">password :</label>
-  <input
-    type="password"
-    name="password1"
-    id="password1"
-    placeholder="enter the password"
-        class="bg-gray-700 border-2 border-white-100 rounded-xl text-xs h-8 pl-2 pr-2 w-48 focus:outline-none ml-6"
-  />
+    <label for="password1">password :</label>
+    <input
+      type="password"
+      name="password1"
+      id="password1"
+      placeholder="enter the password"
+      class="bg-gray-700 border-2 border-white-100 rounded-xl text-xs h-8 pl-2 pr-2 w-48 focus:outline-none ml-6"
+    />
   </div>
   <br />
   <div class="pr-4">
-  <label for="password2">repeat password :</label>
-  <input
-    type="password"
-    name="password2"
-    id="password2"
-    placeholder="repeat the password"
-        class="bg-gray-700 border-2 border-white-100 rounded-xl text-xs h-8 pl-2 pr-2 w-48 focus:outline-none ml-2"
-
-  />
+    <label for="password2">repeat password :</label>
+    <input
+      type="password"
+      name="password2"
+      id="password2"
+      placeholder="repeat the password"
+      class="bg-gray-700 border-2 border-white-100 rounded-xl text-xs h-8 pl-2 pr-2 w-48 focus:outline-none ml-2"
+    />
   </div>
+  {% if form.errors %} {% for field in form%} {% for error in field.errors %}
+  {{error|escape}} {%endfor%} {%endfor%} {%endif%}
   <br />
-  <button type="submit" class="bg-gray-900 p-2 rounded-xl hover:opacity-70 w-20">Sign up</button>
+  <button
+    type="submit"
+    class="bg-gray-900 p-2 rounded-xl hover:opacity-70 w-20"
+  >
+    Sign up
+  </button>
 </form>
 {% endblock %} {% block title %}signup | {% endblock %}

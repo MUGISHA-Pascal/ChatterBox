@@ -17,6 +17,9 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+LOGOUT_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/rooms/"
+LOGIN_URL = "/login/"
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -60,9 +63,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ChatterBox.wsgi.application'
 ASGI_APPLICATION = 'ChatterBox.asgi.application'
 
-LOGOUT_REDIRECT_URL="/"
-LOGIN_REDIRECT_URL="/rooms/"
-LOGIN_URL="/login/"
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
